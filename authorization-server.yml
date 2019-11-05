@@ -1,0 +1,34 @@
+server:
+  port: 7070
+  servlet:
+    context-path: /auth
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/authorization-db
+    driver-class-name: com.mysql.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/authorization-db
+    username: authorization-user
+    password: 'cipher{b2cbd09eda2eb9bd528d09c12d1b7dbba9a26a6bc7cff2d81c89fabaa9b1a1fd61276e858a593618b2901a4038399b60}'
+    initialization-mode: always
+    jpa:
+      hibernate:
+        ddl-auto: none
+        dialect: org.hibernate.dialect.MySQL5Dialect
+      show-sql: true
+      properties:
+        hibernate:
+          jdbc:
+            lob:
+              non_contextual_creation: true
+config:
+  oauth2:
+    loginUrl: http://localhost:8080/auth/login
+    logoutSuccessUrl: http://localhost:8080/
+    clientid: betting-app-v2-kasdlj
+    clientSecret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
+    redirectUris: http://localhost:8080/login/oauth2/code/
+
+token:
+  accessTokenValiditySeconds: 3600
+  refreshTokenValiditySeconds: 18000

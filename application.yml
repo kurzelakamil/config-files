@@ -4,5 +4,5 @@ eureka:
       defaultZone: http://localhost:8089/eureka/
 spring:
   liquibase:
-    change-log: classpath:db/db/main-db.xml
+    change-log: classpath:db/changelog/main-changelog.xml
     enabled: true

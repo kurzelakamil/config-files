@@ -1,5 +1,9 @@
 server:
   proxy: 8080
 zuul:
-  prefix: /api/v1
+  prefix: /api/
   sensitive-headers: Cookie, Set-Cookie
+  routes:
+    authorization-server:
+      path: /auth/**
+      url: http://localhost:7070/auth

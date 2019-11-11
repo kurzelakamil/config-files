@@ -7,3 +7,6 @@ zuul:
     authorization-server:
       path: /auth/**
       url: http://localhost:7070/auth
+    user-service:
+      path: /**
+      url: http://localhost:8010/

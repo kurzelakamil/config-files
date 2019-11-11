@@ -8,8 +8,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/authorization-db
     driver-class-name: org.postgresql.Driver
     jdbc-url: jdbc:postgresql://localhost:5432/authorization-db
-    username: "{cipher}0ab93e039f5de72e1d9774b0f7b3e4699c15f4232e34aa07f6ce32df904f0fd17c9b837d5443342ee5595cecdca41faa"
-    password: "{cipher}b2cbd09eda2eb9bd528d09c12d1b7dbba9a26a6bc7cff2d81c89fabaa9b1a1fd61276e858a593618b2901a4038399b60"
+    username: '{cipher}0ab93e039f5de72e1d9774b0f7b3e4699c15f4232e34aa07f6ce32df904f0fd17c9b837d5443342ee5595cecdca41faa'
+    password: '{cipher}b2cbd09eda2eb9bd528d09c12d1b7dbba9a26a6bc7cff2d81c89fabaa9b1a1fd61276e858a593618b2901a4038399b60'
     initialization-mode: always
     jpa:
       hibernate:

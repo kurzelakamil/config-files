@@ -33,3 +33,6 @@ config:
 token:
   accessTokenValiditySeconds: 3600
   refreshTokenValiditySeconds: 18000
+
+encrypt:
+  key: ${ENCRYPT_KEY}

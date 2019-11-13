@@ -1,5 +1,18 @@
 server:
   proxy: 8080
+
+spring:
+  security:
+    oauth2:
+      client:
+        access-token-uri: http://localhost:7070/auth/oauth/token
+        user-authorization-uri: http://localhost:7070/auth/oauth/authorize
+        client-id: betting-app-v2-kasdlj
+        client-secret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
+        client-name: authorization-server
+      resource:
+        user-info-uri: http://localhost:7070/auth/user/me
+
 zuul:
   prefix: /api/
   sensitive-headers: Cookie, Set-Cookie
@@ -10,3 +23,4 @@ zuul:
     user-service:
       path: /**
       url: http://localhost:8010/
+

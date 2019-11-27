@@ -1,0 +1,10 @@
+server:
+  port: 8010
+
+oauth2:
+  config:
+    signingKey: '{cipher}a23f9cd65d6c59b46b22b72973687892059b6fee924181fc5b75b7bf564c6b3a'
+
+encrypt:
+  key: ${ENCRYPT_KEY}
+

@@ -25,6 +25,10 @@ spring:
         output:
           destination: authorization-server
           content-type: application/json
+  rabbitmq:
+    username: admin
+    password: admin
+
 oauth2:
   config:
     signingKey: '{cipher}a23f9cd65d6c59b46b22b72973687892059b6fee924181fc5b75b7bf564c6b3a'

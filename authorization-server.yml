@@ -27,6 +27,9 @@ spring:
         input:
           destination: authorization-server
           content-type: application/json
+  rabbitmq:
+    username: admin
+    password: admin
 
 oauth2:
   config:

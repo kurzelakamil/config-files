@@ -25,7 +25,10 @@ spring:
     stream:
       bindings:
         input:
-          destination: authorization-server
+          destination: user-created
+          content-type: application/json
+        output:
+          destination: user-created
           content-type: application/json
   rabbitmq:
     username: admin

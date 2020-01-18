@@ -25,6 +25,10 @@ spring:
     username: '{cipher}a1ea071fe80e1f69c0935c781786d371cd88dd667fb774af41fcf6ccb84cb6bd'
     password: '{cipher}a1ea071fe80e1f69c0935c781786d371cd88dd667fb774af41fcf6ccb84cb6bd'
 
+axon:
+  amqp:
+    exchange: create-user
+
 oauth2:
   config:
     client-id: betting-app-v2-kasdlj

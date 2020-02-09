@@ -1,6 +1,13 @@
 server:
-  port: 8089
+  port: ${PORT}
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+
+---
+spring:
+  profiles: local
+
+server:
+  port: 8089

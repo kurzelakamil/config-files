@@ -23,7 +23,7 @@ spring:
       database-platform: org.hibernate.dialect.PostgreSQL9Dialect
   rabbitmq:
     host: clam.rmq.cloudamqp.com
-    port: 1883
+    port: 8883
     username: '{cipher}d09ec49f846ad92064003b728359ee5bffaeaabf9f7a87f388211620f032cf5d'
     password: '{cipher}f9b92bb26d881f8afc005b8d894d0d6d8125f8e78a42494213263562974c2afbf3a58cd2178e306fb3f42a47f31cfee064e4c311505ccb3bade95f369004f90e'
   mail:

@@ -22,8 +22,10 @@ spring:
               non_contextual_creation: true
       database-platform: org.hibernate.dialect.PostgreSQL9Dialect
   rabbitmq:
-    username: '{cipher}a1ea071fe80e1f69c0935c781786d371cd88dd667fb774af41fcf6ccb84cb6bd'
-    password: '{cipher}a1ea071fe80e1f69c0935c781786d371cd88dd667fb774af41fcf6ccb84cb6bd'
+    host: clam.rmq.cloudamqp.com
+    port: 1883
+    username: '{cipher}d09ec49f846ad92064003b728359ee5bffaeaabf9f7a87f388211620f032cf5d'
+    password: '{cipher}f9b92bb26d881f8afc005b8d894d0d6d8125f8e78a42494213263562974c2afbf3a58cd2178e306fb3f42a47f31cfee064e4c311505ccb3bade95f369004f90e'
   mail:
     host: smtp.gmail.com
     port: 587
@@ -40,7 +42,7 @@ oauth2:
   config:
     client-id: betting-app-v2-kasdlj
     client-secret: '{cipher}8e238892099bc284dbff541d94d5a32d80e513858c239ab0a2076e410985eae876e1519d1a419b05bbd1466b16c4f45fc1bb63ed719da004b8da9fe88abcedb3'
-    redirect-uris: http://localhost:8080/login
+    redirect-uris: http://https://betting-app-api-gateway.herokuapp.com/login
     signingKey: '{cipher}a23f9cd65d6c59b46b22b72973687892059b6fee924181fc5b75b7bf564c6b3a'
 
 encrypt:

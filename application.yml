@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://betting-app-discovery-server.herokuapp.com/eureka
+      defaultZone: http://localhost:8089/eureka
 spring:
   liquibase:
     change-log: classpath:db/changelog/main-changelog.xml

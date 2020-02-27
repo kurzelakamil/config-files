@@ -1,13 +1,13 @@
 server:
-  port: ${PORT}
+  port: 7070
   servlet:
     context-path: /auth
 
 spring:
   datasource:
-    url: jdbc:postgresql://ec2-3-213-192-58.compute-1.amazonaws.com:5432/dhfqcml4d9l9
+    url: jdbc:postgresql://authorization-database:5432/authorization-db
     driver-class-name: org.postgresql.Driver
-    jdbc-url: jdbc:postgresql://ec2-3-213-192-58.compute-1.amazonaws.com:5432/dhfqcml4d9l9
+    jdbc-url: jdbc:postgresql://authorization-database:5432/authorization-db
     username: '{cipher}9840091eab67b6a92e52f42e86c74dd84724c9e051d8eef0a6b86a5e166a3f67'
     password: '{cipher}7db0d5f0e5bbc838f7861b4a0133d5e67dc23ab3e060f901069a21aa4e028bebef9a90ef0725a186da3a7c288282cc574285d0bb9f6df1b49e799a76333a576e1716801792ec0f396fe4337c7d302fc23b0589f3da5b3414e0521572cd31201a'
     initialization-mode: always
@@ -42,11 +42,11 @@ oauth2:
   config:
     client-id: betting-app-v2-kasdlj
     client-secret: '{cipher}8e238892099bc284dbff541d94d5a32d80e513858c239ab0a2076e410985eae876e1519d1a419b05bbd1466b16c4f45fc1bb63ed719da004b8da9fe88abcedb3'
-    redirect-uris: http://https://betting-app-api-gateway.herokuapp.com/login
+    redirect-uris: http://api-gateway:8080/login
     signingKey: '{cipher}a23f9cd65d6c59b46b22b72973687892059b6fee924181fc5b75b7bf564c6b3a'
 
 encrypt:
   key: ${ENCRYPT_KEY}
 
 activation:
-  url: https://betting-app-api-gateway.herokuapp.com/authorization-service/users/activation
+  url: http://api-gateway:8080/authorization-service/users/activation

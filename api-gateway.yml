@@ -22,7 +22,7 @@ zuul:
       url: http://authorization-server:7070/auth
     user-service:
       path: /user-service/**
-      url: http://localhost:8010/
+      url: http://user-service:8010/
 
 encrypt:
   key: ${ENCRYPT_KEY}

@@ -1,11 +1,11 @@
 server:
-  port: 8010
+  port: ${USER_SERVICE_PORT}
 
 spring:
   datasource:
-    url: jdbc:postgresql://user-database:5433/user-db
+    url: jdbc:postgresql://${USER_DB}:${USER_DB_PORT}/user-db
     driver-class-name: org.postgresql.Driver
-    jdbc-url: jdbc:postgresql://user-database:5433/user-db
+    jdbc-url: jdbc:postgresql://${USER_DB}:${USER_DB_PORT}/user-db
     username: '{cipher}84da77612e53cde0822fef4e5ed4942d5f3c1571cc11d581c564b2a36c6e3672'
     password: '{cipher}3ee9af83d813b2a50a114438200337a19dbab14853ee96d6ce3b91f81f62699d'
     initialization-mode: always
@@ -23,8 +23,10 @@ spring:
               non_contextual_creation: true
       database-platform: org.hibernate.dialect.PostgreSQL9Dialect
   rabbitmq:
-    username: '{cipher}a1ea071fe80e1f69c0935c781786d371cd88dd667fb774af41fcf6ccb84cb6bd'
-    password: '{cipher}a1ea071fe80e1f69c0935c781786d371cd88dd667fb774af41fcf6ccb84cb6bd'
+    host: ${RABBIT}
+    port: ${RABBIT_PORT}
+    username: '{cipher}0aa4e76bb5b4b56cabe6a25cab50cce2df86bb5edd646a48afd28e5d15382d6f'
+    password: '{cipher}866afd400be760d41f0b56eeaeef01d978c9a2d8bf55896de9cdab43de97877c'
 
 oauth2:
   config:

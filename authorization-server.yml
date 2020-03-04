@@ -1,15 +1,18 @@
 server:
-  port: 7070
+  port: ${AUTHORIZATION_SERVER_PORT}
   servlet:
     context-path: /auth
 
+logging:
+  level: DEBUG
+
 spring:
   datasource:
-    url: jdbc:postgresql://authorization-database:5432/authorization-db
+    url: jdbc:postgresql://${AUTHORIZATION_DB}:${AUTHORIZATION_DB_PORT}/authorization-db
     driver-class-name: org.postgresql.Driver
-    jdbc-url: jdbc:postgresql://authorization-database:5432/authorization-db
-    username: '{cipher}9840091eab67b6a92e52f42e86c74dd84724c9e051d8eef0a6b86a5e166a3f67'
-    password: '{cipher}7db0d5f0e5bbc838f7861b4a0133d5e67dc23ab3e060f901069a21aa4e028bebef9a90ef0725a186da3a7c288282cc574285d0bb9f6df1b49e799a76333a576e1716801792ec0f396fe4337c7d302fc23b0589f3da5b3414e0521572cd31201a'
+    jdbc-url: jdbc:postgresql://${AUTHORIZATION_DB}:${AUTHORIZATION_DB_PORT}/authorization-db
+    username: '{cipher}6117ccd79c38568da5f0f4734271bde31c4749061f388c257958a30bf47a5c220b70620d32c8cd73f0a4d63136ac33a3'
+    password: '{cipher}ec09316224982eb8a35ec00c3ce2d8d6d48a90eb0c1895aa962bfc19c991753d6c4aceaf86aa4b383377fff723c23f04'
     initialization-mode: always
     jpa:
       hibernate:
@@ -22,10 +25,10 @@ spring:
               non_contextual_creation: true
       database-platform: org.hibernate.dialect.PostgreSQL9Dialect
   rabbitmq:
-    host: clam.rmq.cloudamqp.com
-    port: 8883
-    username: '{cipher}d09ec49f846ad92064003b728359ee5bffaeaabf9f7a87f388211620f032cf5d'
-    password: '{cipher}f9b92bb26d881f8afc005b8d894d0d6d8125f8e78a42494213263562974c2afbf3a58cd2178e306fb3f42a47f31cfee064e4c311505ccb3bade95f369004f90e'
+    host: ${RABBIT}
+    port: ${RABBIT_PORT}
+    username: '{cipher}0aa4e76bb5b4b56cabe6a25cab50cce2df86bb5edd646a48afd28e5d15382d6f'
+    password: '{cipher}866afd400be760d41f0b56eeaeef01d978c9a2d8bf55896de9cdab43de97877c'
   mail:
     host: smtp.gmail.com
     port: 587
@@ -42,11 +45,11 @@ oauth2:
   config:
     client-id: betting-app-v2-kasdlj
     client-secret: '{cipher}8e238892099bc284dbff541d94d5a32d80e513858c239ab0a2076e410985eae876e1519d1a419b05bbd1466b16c4f45fc1bb63ed719da004b8da9fe88abcedb3'
-    redirect-uris: http://api-gateway:8080/login
+    redirect-uris: http://localhost:8080/login
     signingKey: '{cipher}a23f9cd65d6c59b46b22b72973687892059b6fee924181fc5b75b7bf564c6b3a'
 
 encrypt:
   key: ${ENCRYPT_KEY}
 
 activation:
-  url: http://api-gateway:8080/authorization-service/users/activation
+  url: http://${API_GATEWAY}:${API_GATEWAY_PORT}/authorization-service/users/activation

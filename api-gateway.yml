@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${API_GATEWAY_PORT}
 
 security:
   basic:
@@ -8,10 +8,10 @@ security:
     client:
       clientId: betting-app-v2-kasdlj
       clientSecret: '{cipher}8e238892099bc284dbff541d94d5a32d80e513858c239ab0a2076e410985eae876e1519d1a419b05bbd1466b16c4f45fc1bb63ed719da004b8da9fe88abcedb3'
-      accessTokenUri: http://authorization-server:7070/auth/oauth/token
-      userAuthorizationUri: http://authorization-server:7070/auth/oauth/authorize
+      accessTokenUri: http://localhost:7070/auth/oauth/token
+      userAuthorizationUri: http://localhost:7070/auth/oauth/authorize
     resource:
-      userInfoUri: http://authorization-server:7070/auth/users/me
+      userInfoUri: http://localhost:7070/auth/users/me
 
 zuul:
   prefix: /
@@ -19,10 +19,10 @@ zuul:
   routes:
     authorization-server:
       path: /authorization-server/**
-      url: http://authorization-server:7070/auth
+      url: http://${AUTHORIZATION_SERVER}:${AUTHORIZATION_SERVER_PORT}/auth
     user-service:
       path: /user-service/**
-      url: http://user-service:8010/
+      url: http://${USER_SERVICE}:${USER_SERVICE_PORT}/
 
 encrypt:
   key: ${ENCRYPT_KEY}

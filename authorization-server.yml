@@ -3,9 +3,6 @@ server:
   servlet:
     context-path: /auth
 
-logging:
-  level: DEBUG
-
 spring:
   datasource:
     url: jdbc:postgresql://${AUTHORIZATION_DB}:${AUTHORIZATION_DB_PORT}/authorization-db

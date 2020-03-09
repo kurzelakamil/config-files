@@ -10,7 +10,7 @@ security:
       clientSecret: '{cipher}8e238892099bc284dbff541d94d5a32d80e513858c239ab0a2076e410985eae876e1519d1a419b05bbd1466b16c4f45fc1bb63ed719da004b8da9fe88abcedb3'
       accessTokenUri: http://localhost:7070/auth/oauth/token
       userAuthorizationUri: http://localhost:7070/auth/oauth/authorize
-      preEstablishedRedirectUri: http://{REDIRECT_HOST}:{REDIRECT_PORT}/login
+      preEstablishedRedirectUri: http://${REDIRECT_HOST}:${REDIRECT_PORT}/login
       useCurrentUri: false
     resource:
       userInfoUri: http://localhost:7070/auth/users/me

@@ -42,11 +42,11 @@ oauth2:
   config:
     client-id: betting-app-v2-kasdlj
     client-secret: '{cipher}8e238892099bc284dbff541d94d5a32d80e513858c239ab0a2076e410985eae876e1519d1a419b05bbd1466b16c4f45fc1bb63ed719da004b8da9fe88abcedb3'
-    redirect-uris: http://${REDIRECT_HOST}/login
+    redirect-uris: http://localhost:8080/login
     signingKey: '{cipher}a23f9cd65d6c59b46b22b72973687892059b6fee924181fc5b75b7bf564c6b3a'
 
 encrypt:
   key: ${ENCRYPT_KEY}
 
 activation:
-  url: http://${API_GATEWAY}:${API_GATEWAY_PORT}/authorization-service/users/activation
+  url: http://localhost:8080/authorization-service/users/activation
